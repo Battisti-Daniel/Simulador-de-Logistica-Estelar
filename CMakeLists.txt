@@ -6,4 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 add_executable(trabalh_m1 main.cpp
         Sensores.cpp
         Sensores.h
+        Cargas.cpp
+        Cargas.h
 )
