@@ -1,4 +1,4 @@
-#include "Sensores.h"
+#include "../include/Sensores.h"
 
 #include <iostream>
 

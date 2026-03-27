@@ -7,14 +7,7 @@
 
 #include <iostream>
 
-#define SIZE_CHAR 50
-
-struct Node {
-
-    char load[50];
-    Node *next;
-
-};
+#include "Naves.h"
 
 struct Loads {
 
@@ -26,10 +19,8 @@ struct Loads {
 
 Loads *createLoads();
 
-Node *createNode(char name[50]);
-
 bool insertLoad(Loads *loads, char name[50]);
-char removeLoad(Loads *loads, char name[50]);
-char removeLoad(Loads *loads, int index);
+char* removeLoad(Loads *loads, char name[50]);
+char* removeLoad(Loads *loads, int index);
 
 #endif //TRABALH_M1_CARGAS_H

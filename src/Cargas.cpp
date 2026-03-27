@@ -1,7 +1,9 @@
-#include "Cargas.h"
+#include "../include/Cargas.h"
 
 #include <cstring>
 #include <iostream>
+
+#include "../include/Naves.h"
 
 Loads *createLoads() {
 
@@ -14,16 +16,6 @@ Loads *createLoads() {
 
 }
 
-Node *createNode(char name[50]) {
-
-    Node *node = (Node*)malloc(sizeof(Node));
-    strcpy(node->load, name);
-    node->next = NULL;
-
-    return node;
-
-}
-
 bool insertLoad(Loads *loads, char name[50]) {
 
     Node *node = createNode(name);
@@ -32,18 +24,18 @@ bool insertLoad(Loads *loads, char name[50]) {
         loads->head = node;
         loads->tail = node;
     }else {
-        loads->tail->next = node;
-        loads->tail = node;
+        node->next = loads->head;
+        loads->head = node;
     }
     loads->counter += 1;
     return true;
 
 }
 
-char removeLoad(Loads *loads, char name[50]) {
+char* removeLoad(Loads *loads, char name[50]) {
 
     if (loads->head == NULL) {
-        return ' ';
+        return NULL;
     }
 
     Node *current = loads->head;
@@ -51,9 +43,14 @@ char removeLoad(Loads *loads, char name[50]) {
 
     while (current != NULL) {
 
-            if (strcmp(name, current->load) == 0) {
+            if (strcmp(name, current->name) == 0) {
                 Node *remover = current;
-                char content = *current->load;
+                char *content = (char*)malloc(50);
+                strcpy(content, current->name);
+
+                if (current == loads->tail) {
+                    loads->tail = previous;
+                }
 
                 if (previous == NULL) {
                     loads->head = current->next;
@@ -70,14 +67,14 @@ char removeLoad(Loads *loads, char name[50]) {
         current = current->next;
 
     }
-    return ' ';
+    return NULL;
 
 }
 
-char removeLoad(Loads *loads, int index) {
+char* removeLoad(Loads *loads, int index) {
 
     if (loads->head == NULL || index <= 0 || index > loads->counter) {
-        return ' ';
+        return NULL;
     }
 
     Node *current = loads->head;
@@ -87,7 +84,12 @@ char removeLoad(Loads *loads, int index) {
 
         if (i == index) {
             Node *remover = current;
-            char content = *current->load;
+            char *content = (char*)malloc(50);
+            strcpy(content, current->name);
+
+            if (current == loads->tail) {
+                loads->tail = previous;
+            }
 
             if (previous == NULL) {
                 loads->head = current->next;
@@ -105,6 +107,8 @@ char removeLoad(Loads *loads, int index) {
         current = current->next;
 
     }
+
+    return NULL;
 
 
 }
