@@ -173,7 +173,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -g -std=c99"
+					"fragment" : "-fno-strict-aliasing -Werror=implicit-function-declaration -Werror=pointer-arith  -O3 -DNDEBUG -std=c99"
 				},
 				{
 					"backtrace" : 3,

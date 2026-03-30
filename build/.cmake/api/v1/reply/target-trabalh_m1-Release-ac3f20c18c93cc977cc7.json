@@ -81,7 +81,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g"
+					"fragment" : "-O3 -DNDEBUG"
 				}
 			],
 			"defines" : 
@@ -150,7 +150,7 @@
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-g",
+				"fragment" : "-O3 -DNDEBUG",
 				"role" : "flags"
 			},
 			{
