@@ -1,2 +1,5 @@
 cmake-build-debug
 .idea
+
+# CMake generated build output
+/build/
