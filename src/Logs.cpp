@@ -20,7 +20,6 @@ bool pushLog(Logs *logs, char name[]) {
     if (logs->head == NULL) {
         logs->head = node;
     }else {
-        logs->head->next = node;
         node->prev = logs->head;
         logs->head = node;
     }

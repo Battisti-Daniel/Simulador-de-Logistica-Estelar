@@ -22,7 +22,6 @@ add_executable(trabalh_m1
         src/Monitoramento.cpp
         src/Logs.cpp
         src/Hangar.cpp
-        src/SetorSensores.cpp
         src/Background.cpp
         src/UI.cpp
         include/Background.h
