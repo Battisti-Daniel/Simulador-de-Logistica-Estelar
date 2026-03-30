@@ -1,4 +1,3 @@
-#include "Background.h"
 #include "../include/raylib.h"
 #include "../include/UI.h"
 
@@ -9,7 +8,6 @@ int main() {
     MaximizeWindow();
     SetTargetFPS(120);
 
-    // Desabilitar qualquer tecla de saída - apenas fechar pelo botão X
     SetExitKey(KEY_NULL);
 
     UIManager *ui = createUIManager();

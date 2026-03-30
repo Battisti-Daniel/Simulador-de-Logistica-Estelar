@@ -74,7 +74,7 @@ bool removeCamera(Monitoring *monitoring, bool tail) {
 
 bool removeCamera(Monitoring *monitoring, int index) {
 
-    if (monitoring->head == NULL | index <= 0 || index > monitoring->count) {
+    if (monitoring->head == NULL || index <= 0 || index > monitoring->count) {
         return false;
     }
 

@@ -136,7 +136,7 @@ char* deleteShip(Ships *ships, char name[]) {
 char* deleteShip(Ships *ships, int index) {
 
     if (ships->head == NULL || index <= 0 || index > ships->count) {
-        return "";
+        return NULL;
     }
 
     if (index == 1) {
