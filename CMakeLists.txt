@@ -24,10 +24,13 @@ add_executable(trabalh_m1
         src/Hangar.cpp
         src/SetorSensores.cpp
         src/Background.cpp
+        src/UI.cpp
         include/Background.h
+        include/UI.h
+        include/ModulosScreen.h
+        include/ModulosOperacoes.h
 )
 
-# ── Includes ──────────────────────────────────────────────────────────
 target_include_directories(trabalh_m1 PRIVATE include)
 
 # ── Linka o Raylib ────────────────────────────────────────────────────

@@ -54,19 +54,20 @@ bool removeCamera(Monitoring *monitoring, bool tail) {
 
     if (tail) {
         node = monitoring->tail;
-        monitoring->tail = monitoring->tail->prev;
+        monitoring->tail = node->prev;
         monitoring->tail->next = monitoring->head;
-        monitoring->head = node->prev;
+        monitoring->head->prev = monitoring->tail;
         free(node);
         node = NULL;
-    }else {
+    } else {
         node = monitoring->head;
-        monitoring->head = monitoring->head->next;
+        monitoring->head = node->next;
         monitoring->head->prev = monitoring->tail;
-        monitoring->tail = node->next;
+        monitoring->tail->next = monitoring->head;
         free(node);
         node = NULL;
     }
+
     monitoring->count -= 1;
     return true;
 }

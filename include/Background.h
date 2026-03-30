@@ -7,6 +7,6 @@
 
 void Background();
 void Panel();
-
+void drawStack(float x, float y, float width, float height, const char* title, int itemCount, unsigned char r, unsigned char g, unsigned char b);
 
 #endif //TRABALH_M1_BACKGROUND_H
