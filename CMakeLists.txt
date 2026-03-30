@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.26)
-project(trabalh_m1)
+project(trabalh_m1 LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
 include(FetchContent)
 FetchContent_Declare(
@@ -33,5 +35,9 @@ target_include_directories(trabalh_m1 PRIVATE include)
 target_link_libraries(trabalh_m1 PRIVATE raylib)
 
 if(WIN32)
-    target_link_options(trabalh_m1 PRIVATE -mwindows)
+        if(MSVC)
+                target_link_options(trabalh_m1 PRIVATE /SUBSYSTEM:WINDOWS)
+        else()
+                target_link_options(trabalh_m1 PRIVATE -mwindows)
+        endif()
 endif()
